@@ -15,6 +15,7 @@ urlpatterns += [
     path("explorer/", include("explorer.urls")),
     path("hijack/", include("hijack.urls")),
     path("search/", include("search.urls")),
+    path("api/", api.urls),
     path("", include("home.urls")),
 ]
 if settings.DEBUG:
@@ -29,8 +30,3 @@ if settings.DEBUG:
     urlpatterns += [
         path("__debug__/", include(debug_toolbar.urls)),
     ]
-
-
-urlpatterns += [
-    path("api/", api.urls),
-]
